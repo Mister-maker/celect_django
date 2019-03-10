@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} | Achievements {% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="page-headers">
+        <div class="row">
+            <div class="col-header project-bg">
+                <h3>Student Achievements </h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
+                    obcaecati eum labore minus ullam accusamus.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="student-achievement">
+            <div class="wrapper">
+                <div class="row">
+                    {% if achievements %}
+                        {% for achievement in achievements  %}
+                            <div class="home-latest__student"><img src="{{ achievement.photo_main.url }}" />
+                                <p>{{ achievement.short_description }}</p>
+                                <a class="button" href="{{ achievement.project_link }}">Learn More</a>
+                            </div>
+                        {% endfor %}
+                    {% else%}  
+                        <div class="sorry-message">
+                            <img src="{% static 'images/sorry.svg' %}" style="width : 40%; margin: 0px auto;"/>
+                            <h3>Sorry Nothing Find Here!</h3>
+                            <p style="font-size: 22px;">Try Next Time</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+    </section>
+
+{% endblock  %}

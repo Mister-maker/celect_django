@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} | Past Event {% endblock %}
+
+{% block content %}
+     <section id="page-sub-events">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                            <div class="sub-events-content">
+                                <div class="sub-event-content-header">
+                                    <div class="sub-content-details"> <span><i class="far fa-clock"></i> {{ past_event.list_date }} </span>
+                                        <h3> {{ past_event.title }} </h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> {{ past_event.place }}</p>
+                                    </div>
+                                    <div class="content-image"> <img src="{{ past_event.photo_main.url }}" /></div>
+                                </div>
+                                <div class="sub-event-content-body">
+                                    <h3>Description </h3>
+                                    <p>{{ past_event.description }}</p>
+                                </div>
+                            </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="side-bar-wrapper">
+                        <div class="sub-event-sidebar">
+                            <p><i class="far fa-clock"></i>{{ past_event.list_date }}</p>
+                            <p><i class="fas fa-map-marker-alt"></i> {{ past_event.place }} </p>
+                        </div>
+                        <div class="google-map"> <iframe src="{{ past_event.google_map_link }}"
+                                frameborder="0" style="border:0" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="row-2">
+                <div class="col-1">
+                    {% if past_event.photo_1 %}
+                        <img src="{{ past_event.photo_1.url }}" alt="Past Event Image"/>
+                    {% endif %}
+                    {% if past_event.photo_2 %}
+                        <img src="{{ past_event.photo_2.url }}" alt="Past Event Image"/>
+                    {% endif %}
+                    {% if past_event.photo_3 %}
+                        <img src="{{ past_event.photo_3.url }}" alt="Past Event Image"/>
+                    {% endif %}
+                    {% if past_event.photo_4 %}
+                        <img src="{{ past_event.photo_4.url }}" alt="Past Event Image"/>
+                    {% endif %}
+                    {% if past_event.photo_5 %}
+                        <img src="{{ past_event.photo_5.url }}" alt="Past Event Image"/>
+                    {% endif %}
+                    {% if past_event.photo_6 %}
+                        <img src="{{ past_event.photo_6.url }}" alt="Past Event Image"/>
+                    {% endif %}
+    
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

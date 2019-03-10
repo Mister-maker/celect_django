@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} | Team {% endblock %}
+
+{% block content %}
+
+
+<div class="page-headers">
+    <div class="row">
+        <div class="col-header team-bg">
+            <h3>Meet Our Team</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
+                obcaecati eum labore minus ullam accusamus.</p>
+        </div>
+    </div>
+</div>
+
+<section id="home-team">
+    <div class="wrapper">
+        <div class="row">
+            {% if team_members %}
+                {% for team_member in team_members %}
+                    <div class="col-1"><img src="{{ team_member.photo_main.url }}" />
+                        <div class="home-team__content">
+                            <h3>{{ team_member.Name }} </h3>
+                            <p>{{ team_member.Post }}</p>
+                            <p>{{ team_member.description }}</p>
+                            <a href="{{ team_member.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"> </i></a>
+                            <a href="{{ team_member.facebook }}" target="_blank"><i class="fab fa-facebook"> </i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else%}
+                <div class="sorry-message">
+                    <img src="{% static 'images/sorry.svg' %}" style="width : 40%; margin: 0px auto;"/>
+                    <h3>Sorry Nothing Find Here!</h3>
+                    <p style="font-size: 22px;">Try Next Time</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

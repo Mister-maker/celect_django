@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} | Contact {% endblock %}
+
+{% block content %}
+
+<section id="page-contact">
+    <div class="wrapper">
+        <div class="contact-heading">
+            <h3>Get in touch </h3>
+            <p> Have a question? Send us a note using the form below and someone from the Celect team will be in
+                touch soon. </p>
+        </div>
+        <div class="row">
+            <form action="{% url 'contact' %}" method='POST'>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required/>
+                    <input type="email" name="email" placeholder="Your Email" required/>
+                    <input type="text" name="designation" placeholder="Your Designation" required/>
+                    <textarea name="message" placeholder="Remember, be nice!"></textarea>
+                    <button class="btn" type="submit">Send </button></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock  %}

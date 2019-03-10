@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} | About Us{% endblock %}
+
+{% block content %}
+
+ <section id="page-nasscom">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                    <h3>Nasscom Curriculum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, sed! Veniam accusantium officiis
+                        debitis reprehenderit voluptate! Autem labore quod ipsam voluptatem! Ipsa odio quam in nesciunt
+                        ullam explicabo officiis ducimus.</p><a class="button" href="#">Nasscom Curriculum</a>
+                    <div class="curricula-note">
+                        <h3>Note: </h3>
+                        <p>consectetur adipisicing elit. Dignissimos, molestias quo nulla, perferendis quidem vel est
+                            laborum sapiente sint nihil iste deleniti odio? Nostrum dolorum deserunt corrupti mollitia,
+                            dolorem optio?</p>
+                    </div>
+                </div>
+                <div class="col-2"><img src="{% static 'images/nasscom.jpg' %}" /></div>
+            </div>
+        </div>
+    </section>
+    <section id="page-university">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                    <h3>University Curriculum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolorem exercitationem earum
+                        autem excepturi facilis perspiciatis sapiente mollitia laborum, quae nisi. Consectetur expedita
+                        ullam architecto ducimus accusamus quasi! Dolorum, explicabo?</p><a class="button" href="#">University
+                        Curriculum</a>
+                    <div class="curricula-note">
+                        <h3>Note: </h3>
+                        <p>consectetur adipisicing elit. Dignissimos, molestias quo nulla, perferendis quidem vel est
+                            laborum sapiente sint nihil iste deleniti odio? Nostrum dolorum deserunt corrupti mollitia,
+                            dolorem optio?</p>
+                    </div>
+                </div>
+                <div class="col-2"> <img src="{% static 'images/header-back.jpg' %}" /></div>
+            </div>
+        </div>
+    </section>
+{% endblock  %}

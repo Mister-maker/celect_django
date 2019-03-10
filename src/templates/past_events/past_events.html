@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} | Events {% endblock %}
+
+{% block content %}
+    <div class="page-headers">
+        <div class="row">
+            <div class="col-header event-bg">
+                <h3>Our Events </h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
+                    obcaecati eum labore minus ullam accusamus.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="page-events">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                    <ul>
+                        <li> <a href="{% url 'events' %}">Latest Events </a></li>
+                        <li><a href="{% url 'past_events' %}">Past Events </a></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                     {% if past_events %}
+                        {% for past_event in past_events  %}
+                            <a href="{% url 'past_event' past_event.id %}">
+                                <div class="events-content">
+                                        <div class="event-content-header">
+                                            <div class="content-details past_color "> <span><i class="far fa-clock"></i> &nbsp;{{ past_event.list_date }} </span>
+                                                <h3>{{ past_event.title }} </h3>
+                                                <p><i class="fas fa-map-marker-alt"></i> {{ past_event.place }} </p>
+                                            </div>
+                                            <div class="content-image"> <img src="{{ past_event.photo_main.url }}" /></div>
+                                        </div>
+                                        <div class="event-content-body">
+                                            <h3>Description </h3>
+                                            <p>{{ past_event.description }}</p>
+                                        </div>
+                                    </div>
+                            </a>
+                        {% endfor %}
+                    {% else %}  
+                        <div class="sorry-message">
+                            <img src="#" style="width : 40%; margin: 0px auto;"/>
+                            <h3>Sorry Nothing Find Here!</h3>
+                            <p style="font-size: 22px;">Try Next Time</p>
+                        </div>
+                    {% endif %}       
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+

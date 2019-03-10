@@ -1,0 +1,147 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %} | Welcome {% endblock %}
+
+{% block content %}
+     <section id="home-header">
+        <div class="wrapper">
+            <div class="home-header__content__wrapper">
+                <div class="header__content">
+                    <h3 class="large">Created Career of <span class="txt-type" data-wait="3000" data-words='["Developers", "Designers", "Students"]'></span></h3>
+                    <p>Introducing Celect — our simple future making programm. </p><button class="video-play-btn"> <i
+                            class="fas fa-play"></i></button><a href="#">About Us </a>
+                    <div class="video-overlay">
+                        <div class="video-player">
+                            <div class="flex-video"><video controls="controls">
+                                    <source src="{% static "videos/test.mp4" %}" type="video/mp4" /></video></div>
+                        </div><a class="close-video-overlay"><i class="fas fa-times"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="home-latest">
+        <div class="wrapper">
+            <div class="row">
+
+                {% if achievements %}
+                    {% for achievement in achievements  %}
+                        <div class="home-latest__student">
+                            <h3>Latest Achievements </h3>
+                            <img src="{{ achievement.photo_main.url}} " />
+                            <p>{{ achievement.short_description }}</p>
+                            <button id="achievement">Learn More</button>
+                            <div class="content-overlay">
+                                <div class="content-wrapper"><img src="{{ achievement.photo_main.url}} " />
+                                    <h3>{{ achievement.title }}</h3>
+                                    <p>{{ achievement.home_page_description }}</p>
+                                    <a class="button" href="{% url 'achievement' %}">More Achievements</a>
+                                </div><a class="close-content-overlay"><i class="fas fa-times"></i></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                {% else%}
+                    <div class="sorry-message">
+                        <img src="{% static 'images/sorry.svg' %}" style="width : 40%; margin: 0px auto;"/>
+                        <h3>Sorry Nothing Find Here!</h3>
+                        <p style="font-size: 22px;">Try Next Time</p>
+                    </div>
+                {% endif %}
+
+                {% if events %}
+                    {% for event in events  %}    
+                        <div class="home-latest__upcoming">
+                            <a href="{% url 'event' event.id %}">    
+                            <h3>Latest Event </h3>
+                            <img src="{{ event.photo_main.url }}" />
+                            <p>{{ event.title }}</p>
+                            <a href="{{ event.google_form_link }}" class="button">Attend</a>
+                            </a>
+                        </div>
+                    {% endfor %}
+
+                {% else%}
+                    <div class="sorry-message">
+                        <img src="{% static 'images/sorry.svg' %}" style="width : 40%; margin: 0px auto;"/>
+                        <h3>Sorry Nothing Find Here!</h3>
+                        <p style="font-size: 22px;">Try Next Time</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <section id="home-faculties">
+        <div class="wrapper">
+            <div class="row">
+                <div class="home-faculties__images"><img name="slide" /></div>
+                <div class="home-faculties__college">
+                    <div class="home-college__content">
+                        <h2>Curriculum</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere enim quam officia nisi
+                            minima nostrum!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi modi nemo voluptatem, beatae
+                            ut magnam perspiciatis consequuntur eos veritatis, laboriosam aut mollitia vitae officia
+                            iure animi, velit dolorem ipsam alias!</p>
+                            <a href="/curriculum#page-nasscom" class="button">Nasscom</a><a href="/curriculum#page-university" class="button">Delhi University</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       <section id="home-projects">
+        <div class="wrapper">
+            <div class="heading">
+                <h2>Students Projects </h2>
+            </div>
+            <div class="row">
+                {% if projects %}
+                    {% for project in projects  %}
+                         <div class="col-1"><img src="{{ project.photo_main.url }}" />
+                            <div class="home-project__content">
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.description }}</p><a href="{{ project.project_link }}">Go to project </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else%}
+                    <div class="sorry-message">
+                        <img src="{% static 'images/sorry.svg' %}" style="width : 40%; margin: 0px auto;"/>
+                        <h3>Sorry Nothing Find Here!</h3>
+                        <p style="font-size: 22px;">Try Next Time</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+   <section id="home-team">
+    <div class="wrapper">
+        <div class="heading">
+            <h2>Our Team </h2>
+        </div>
+        <div class="row">
+            {% if team_members %}
+                {% for team_member in team_members %}
+                    <div class="col-1"><img src="{{ team_member.photo_main.url }}" />
+                        <div class="home-team__content">
+                            <h3>{{ team_member.Name }} </h3>
+                            <p>{{ team_member.Post }}</p>
+                            <p>{{ team_member.description }}</p>
+                            <a href="{{ team_member.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"> </i></a>
+                            <a href="{{ team_member.facebook }}" target="_blank"><i class="fab fa-facebook"> </i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else%}
+                <div class="sorry-message">
+                    <img src="{% static 'images/sorry.svg' %}" style="width : 40%; margin: 0px auto;"/>
+                    <h3>Sorry Nothing Find Here!</h3>
+                    <p style="font-size: 22px;">Try Next Time</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

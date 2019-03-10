@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} | Events {% endblock %}
+
+{% block content %}
+     <section id="page-sub-events">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                            <div class="sub-events-content">
+                                <div class="sub-event-content-header">
+                                    <div class="sub-content-details"> <span><i class="far fa-clock"></i> {{ event.list_date }} </span>
+                                        <h3> {{ event.title }} </h3>
+                                        <p><i class="fas fa-map-marker-alt"></i> {{ event.place }}</p>
+                                    </div>
+                                    <div class="content-image"> <img src="{{ event.photo_main.url }}" /></div>
+                                </div>
+                                <div class="sub-event-content-body">
+                                    <h3>Description </h3>
+                                    <p>{{ event.description }}</p>
+                                </div>
+                            </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="side-bar-wrapper">
+                        <div class="sub-event-sidebar">
+                            <p><i class="far fa-clock"></i>{{ event.list_date }}</p>
+                            <p><i class="fas fa-map-marker-alt"></i> {{ event.place }} </p>
+                            <a class="button" href="{{ event.google_form_link }}">Attend</a>
+                        </div>
+                        <div class="google-map"> <iframe src="{{ event.google_map_link }}"
+                                frameborder="0" style="border:0" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
