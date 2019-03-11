@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home_view, about_view, curriculum_view
+from pages.views import home_view, about_view, curriculum_view, messages_view
 
 # from contacts.views import contact_view
 from django.urls import path, include
@@ -35,6 +35,7 @@ urlpatterns = [
     path('past_events/', include('past_event_listing.urls')),
     path('achievements/', include('achievement.urls')),
     path('curriculum/', curriculum_view, name="curriculum"),
+    path('messages/', messages_view, name="messages"),
     path('admin/', admin.site.urls),
 ]
 

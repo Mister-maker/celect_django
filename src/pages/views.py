@@ -26,3 +26,6 @@ def about_view(request, *args, **kwargs):
 def curriculum_view(request, *args, **kwargs):
     return render(request, "curriculum.html", {})
 
+def messages_view(request, *args, **kwargs):
+    return render(request, "messages/messages.html", {})
+

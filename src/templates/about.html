@@ -1,18 +1,59 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
 
 {% block title %} | About Us{% endblock %}
 
 {% block content %}
 
 <div class="page-headers">
-    <div class="row">
-        <div class="col-header about-bg">
-            <h3>About Us </h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
-                obcaecati eum labore minus ullam accusamus.</p>
+        <div class="row">
+            <div class="col-header about-bg">
+                <h3>About Us</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
+                    obcaecati eum labore minus ullam accusamus.</p>
+            </div>
         </div>
     </div>
-</div>
-
-    <h1>Welcome to About page</h1>
+    <section id="page-about">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                    <h3>Principal Message </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ad eaque qui at voluptatem
+                        eum, veritatis eligendi! Exercitationem, soluta. Necessitatibus ex minima enim, accusamus dolor
+                        quis ducimus sunt reiciendis assumenda!</p><a class="button" href="/messages#message-one">Read More </a>
+                </div>
+                <div class="col-2"> <img src="{% static 'images/princ.jpg' %}" /></div>
+            </div>
+            <div class="row-2">
+                <div class="col-1">
+                    <div class="video-player">
+                        <div class="flex-video"><video controls="controls">
+                                <source src="{% static 'videos/test.mp4' %}" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h3>Our College </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus qui ipsum autem
+                        voluptates, necessitatibus, ab illo non corporis, atque reiciendis. Dicta facere ipsum rem
+                        eveniet magnam porro possimus et.</p><a class="button" href="/messages#message-two">Read More </a>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-1">
+                    <h3>BVOC </h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus possimus qui ipsum autem
+                        voluptates, necessitatibus, ab illo non corporis, atque reiciendis. Dicta facere ipsum rem
+                        eveniet magnam porro possimus et.</p><a class="button" href="/messages#message-three">Read More </a>
+                </div>
+                <div class="col-2">
+                    <div class="video-player">
+                        <div class="flex-video"><video controls="controls">
+                                <source src="{% static 'videos/test.mp4' %}" type="video/mp4" /></video></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock  %}
