@@ -34,6 +34,7 @@ urlpatterns = [
     path('events/', include('event_listing.urls')),
     path('past_events/', include('past_event_listing.urls')),
     path('achievements/', include('achievement.urls')),
+    path('accounts/', include('accounts.urls')),
     path('curriculum/', curriculum_view, name="curriculum"),
     path('messages/', messages_view, name="messages"),
     path('admin/', admin.site.urls),
