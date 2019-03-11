@@ -11,12 +11,9 @@ def registration_view(request, *args, **kwargs):
         text = request.POST['text']
         name = request.POST['name']
         #  Check if user has made inquiry already
-        # if request.user.is_authenticated:
-        #     user_id = request.user.id
-        #     has_contacted = Contact.objects.all().filter(listing_id=listing_id, user_id=user_id)
-        #     if has_contacted:
-        #         messages.error(request, 'You have already made an inquiry for this listing')
-        #         return redirect('/listings/'+listing_id)
+        if RegistrationForm.objects.filter(name=name).exists():
+            messages.error(request, 'You have already Registered ')
+            return redirect('/accounts/register')
 
         registrationForm = RegistrationForm(name=name, text=text)
 
