@@ -2,23 +2,46 @@
 {% load staticfiles %}
 
 
-{% block title %} | About Us{% endblock %}
+{% block title %} | Register {% endblock %}
 
 {% block content %}
-    <h1>Registerd </h1>
 
-    <form action="{% url 'register' %}" method="POST">
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        {% csrf_token %}
-        <input type="text" name="name" required>
-        <input type="text" name="text">
-        <input type="submit" value="submit">
-    </form>
-    
+<section id="page-register">
+    <div class="wrapper">
+            <div class="message-wrapper">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-1">
+                        <input type="text" name="student_name" placeholder="Your Name">
+                        <input type="text" name="course" placeholder="Your Course Name">
+                        <input type="email" name="email" placeholder="Your Email Address">
+                        <input type="text" name="phone" placeholder="Mobile Number">
+                        <input type="text" name="roll_number" placeholder="Your Class Roll Number">
+                        <input type="text" name="linkedin_url" placeholder="Your Linkedin Profile">
+                        <input type="text" name="github_url" placeholder="Your Github Profile">
+                        <input type="text" name="portfolio_url" placeholder="Your Portfoilo">
+                    </div>
+
+                    <div class="col-2">
+                       
+                        <input type="date" name="date_of_birth" placeholder="Your Date Of Birth">
+                        <input type="text" name="resume" placeholder="Your Resume Link">
+                        <input type="text" name="college_company_name" placeholder="Your College Or Company Name">
+                        <input type="text" name="year" placeholder="Your Placement Year">
+                        <textarea name="internship_details" placeholder="Your Internship Details "></textarea>
+                        <input type="submit" value="submit">
+                    </div>
+                </div>
+            </form>
+    </div>
+</section>
 {% endblock  %}
