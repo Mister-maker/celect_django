@@ -23,7 +23,7 @@
                          <div class="col-1"><img src="{{ project.photo_main.url }}" />
                             <div class="home-project__content">
                                 <h3>{{ project.title }}</h3>
-                                <p>{{ project.description }}</p><a href="{{ project.project_link }}">Go to project </a>
+                                <p>{{ project.short_description }}</p><a href="{% url 'project' project.id %}">Learn More </a>
                             </div>
                         </div>
                     {% endfor %}

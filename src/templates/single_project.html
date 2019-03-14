@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} | Events {% endblock %}
+
+{% block content %}
+      <section id="page-sub_project">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-1">
+                    <h3>{{ project.title }} </h3>
+                    <div class="project-creator"><img src="{{ project.creator_photo.url }}" alt="" />
+                        <div class="project-creator-name">
+                            <p>{{ project.creator_name }}</p><span>{{ project.list_date }}</span>
+                        </div>
+                    </div><img src="{{ project.photo_main.url }}" alt="" />
+                    <p>{{ project.full_description }}</p>
+                   <a class="button" href="{{ project.project_link }}">Go To Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
