@@ -23,7 +23,7 @@
                         {% for achievement in achievements  %}
                             <div class="home-latest__student"><img src="{{ achievement.photo_main.url }}" />
                                 <p>{{ achievement.short_description }}</p>
-                                <a class="button" href="{{ achievement.project_link }}">Learn More</a>
+                                <a class="button" href="{% url 'single_achievement' achievement.id %}">Learn More</a>
                             </div>
                         {% endfor %}
                     {% else%}  
