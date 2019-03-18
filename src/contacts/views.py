@@ -15,7 +15,7 @@ def contact_view(request, *args, **kwargs):
 
         subject = 'Site Contact Form'
         from_email = settings.EMAIL_HOST_USER
-        to_email = ['********@gmail.com']
+        to_email = ['*******@gmail.com']
         contact_message = "Name: %s,\nDesignation: %s,\nEmail: %s,\nMessage: %s"%(
             form_full_name,
             form_designation,
@@ -28,7 +28,7 @@ def contact_view(request, *args, **kwargs):
             to_email,
             fail_silently=False)
 
-        messages.success(request, 'Your Message Hase Been Send')
+        messages.success(request, 'Your Message Has Been Send')
 
         if form_full_name is None:
             print("Null Value")
