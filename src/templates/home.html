@@ -125,8 +125,12 @@
                             <h3>{{ team_member.Name }} </h3>
                             <p>{{ team_member.Post }}</p>
                             <p>{{ team_member.description }}</p>
-                            <a href="{{ team_member.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"> </i></a>
-                            <a href="{{ team_member.facebook }}" target="_blank"><i class="fab fa-facebook"> </i></a>
+                            {% if team_member.linkedin %}
+                                <a href="{{ team_member.linkedin }}" target="_blank"><i class="fab fa-linkedin-in"> </i></a>
+                            {% endif %}
+                            {% if team_member.twitter %}
+                                <a href="{{ team_member.twitter }}" target="_blank"><i class="fab fa-twitter"> </i></a>
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
