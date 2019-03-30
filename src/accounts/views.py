@@ -40,7 +40,7 @@ def registration_view(request, *args, **kwargs):
         send_mail(
             'Registration Celect',
             'Thank You! \n Your submission is received and we will contact you soon.',
-            '******@gmail.com',
+            'bvoc2754helpline@gmail.com',
             [email],
             fail_silently=False
         )

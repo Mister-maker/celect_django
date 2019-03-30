@@ -15,7 +15,7 @@ def contact_view(request, *args, **kwargs):
 
         subject = 'Site Contact Form'
         from_email = settings.EMAIL_HOST_USER
-        to_email = ['*******@gmail.com']
+        to_email = ['bvoc2754helpline@gmail.com']
         contact_message = "Name: %s,\nDesignation: %s,\nEmail: %s,\nMessage: %s"%(
             form_full_name,
             form_designation,

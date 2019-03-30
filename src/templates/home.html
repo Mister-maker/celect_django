@@ -55,7 +55,7 @@
                     {% for event in events  %}    
                         <div class="home-latest__upcoming">
                             <a href="{% url 'event' event.id %}">    
-                            <h3>Latest Event </h3>
+                            <h3>Upcoming Event </h3>
                             <img src="{{ event.photo_main.url }}" />
                             <p>{{ event.title }}</p>
                             <a href="{{ event.google_form_link }}" class="button">Attend Now</a>
