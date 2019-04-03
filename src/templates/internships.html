@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block title %} | Internships{% endblock %}
+
+{% block content %}
+
+    <!--<div class="page-headers">
+        <div class="row">
+            <div class="col-header about-bg">
+                <h3>Our Internship Data </h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
+                    obcaecati eum labore minus ullam accusamus.</p>
+            </div>
+        </div>
+    </div>-->
+    <section id="page-internship">
+        <div class="wrapper">
+            <div class="row">
+                <h3>Internship Data </h3>
+                <div class="table-wrapper">
+                    
+                    <table>
+                        <tr>
+                            <th>Name </th>
+                            <th>Roll Number</th>
+                            <th>Year </th>
+                            <th>Company Name </th>
+                            <th>Internship Profile </th>
+                            <th>Internship Duration</th>
+                            <th>Internship Details</th>
+                        </tr>
+                        {% if internship %}
+                            {% for internship in internship  %}
+                                <tr>
+                                    <td>{{ internship.full_name }} </td>
+                                    <td>{{ internship.roll_number }} </td>
+                                    <td>{{ internship.year }} </td>
+                                    <td>{{ internship.company_name }} </td>
+                                    <td>{{ internship.internship_profile}} </td>
+                                    <td>{{ internship.internship_duration }} </td>
+                                    <td>{{ internship.internship_details }} </td>
+                                </tr>
+                            {% endfor %}
+                        {% else%}
+                            <div class="sorry-message">
+                                <h3>Sorry Nothing Find Here!</h3>
+                                <p style="font-size: 22px;">Try Next Time</p>
+                            </div>
+                        {% endif %}
+                    </table>
+                </div>
+            </div>
+            <div class="row-two">
+                <div class="our_partners">
+                    <h3>Our Partners </h3>
+                    <ul>
+                        <li><a href="#" target="_blank"> <img src="{% static "images/partner_1.jpg" %}" /></a></li>
+                        <li><a href="https://internshala.com/" target="_blank"> <img
+                                    src="{% static "images/partner.png" %}" /></a></li>
+                        <li><a href="http://www.mirus.in/" target="_blank"> <img
+                                    src="{% static "images/partner_3.jpg" %}" /></a></li>
+                        <li><a href="http://www.loopmethods.com/" target="_blank"> <img
+                                    src="{% static "images/partner_4.jpg" %}" /></a></li>
+                        <li><a href="https://www.niit.com/india/" target="_blank"> <img
+                                    src="{% static "images/partner_5.jpg" %}" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock  %}

@@ -7,6 +7,8 @@ class Event(models.Model):
   google_form_link = models.CharField(max_length=500)
   google_map_link = models.CharField(max_length=500)
   description = models.TextField(blank=True)
+  description_2 = models.TextField(blank=True)
+  description_3 = models.TextField(blank=True)
   photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
   is_published = models.BooleanField(default=True)
   list_date = models.DateTimeField(default=datetime.now, blank=True)

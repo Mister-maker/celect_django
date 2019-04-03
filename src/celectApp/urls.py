@@ -37,6 +37,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('curriculum/', curriculum_view, name="curriculum"),
     path('messages/', messages_view, name="messages"),
+    path('internships/', include('internships.urls')),
     path('admin/', admin.site.urls),
 ]
 

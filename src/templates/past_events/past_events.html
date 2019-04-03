@@ -7,8 +7,7 @@
         <div class="row">
             <div class="col-header event-bg">
                 <h3>Our Events </h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ex sed deserunt quibusdam odit
-                    obcaecati eum labore minus ullam accusamus.</p>
+                <p>"Talent wins games but Teamwork wins championships."</p>
             </div>
         </div>
     </div>
@@ -36,7 +35,9 @@
                                         </div>
                                         <div class="event-content-body">
                                             <h3>Description </h3>
-                                            <p>{{ past_event.description }}</p>
+                                            {% if past_event.description %}
+                                                <p>{{ past_event.description }}</p>
+                                            {% endif %}
                                         </div>
                                     </div>
                             </a>

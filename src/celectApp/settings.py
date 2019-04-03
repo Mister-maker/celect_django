@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'past_event_listing',
     'achievement',
     'accounts',
+    'internships',
 ]
 
 

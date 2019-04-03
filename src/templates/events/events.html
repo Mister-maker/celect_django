@@ -35,7 +35,9 @@
                                         </div>
                                         <div class="event-content-body">
                                             <h3>Description </h3>
-                                            <p>{{ event.description }}</p>
+                                            {% if event.description %}
+                                                <p>{{ event.description }}</p>
+                                            {% endif %}
                                             <a class="button" href="{{ event.google_form_link }}" target="blank">Attend </a>
                                         </div>
                                     </div>

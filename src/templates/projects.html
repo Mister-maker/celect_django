@@ -4,6 +4,11 @@
 {% block title %} | Projects {% endblock %}
 
 {% block content %}
+    <style>
+        #home-projects{
+            margin: 100px 0 !important
+        }
+    </style>
 
     <div class="page-headers">
         <div class="row">
@@ -14,7 +19,7 @@
         </div>
     </div>
 
-    <section id="home-projects">
+    <section id="home-projects" class="page--modifire">
         <div class="wrapper">
             <div class="row">
                 {% if projects %}

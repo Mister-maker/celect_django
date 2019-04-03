@@ -17,7 +17,15 @@
                                 </div>
                                 <div class="sub-event-content-body">
                                     <h3>Description </h3>
-                                    <p>{{ past_event.description }}</p>
+                                    {% if past_event.description %}
+                                        <p>{{ past_event.description }}</p>
+                                    {% endif %}
+                                    {% if past_event.description_2 %}
+                                        <p>{{ past_event.description_2 }}</p>
+                                    {% endif %}
+                                    {% if past_event.description_3 %}
+                                        <p>{{ past_event.description_3 }}</p>
+                                    {% endif %}
                                 </div>
                             </div>
                 </div>
