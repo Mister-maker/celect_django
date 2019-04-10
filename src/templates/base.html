@@ -10,9 +10,11 @@
 </head>
 <body>
     {% include "./includes/navbar.html" %}
-    {% block content %}
-        replace me 
-    {% endblock %}
+    <div class="animation-container">
+        {% block content %}
+            replace me 
+        {% endblock %}
+    </div>
     {% include "./includes/footer.html" %}
     <script src="{% static "js/app.js" %}"></script>
 </body>

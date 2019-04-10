@@ -1,0 +1,51 @@
+#header{
+    background-color: #ffffff;
+    height: 70px;
+    color: #130f4c;
+}
+
+#user-tools{
+    font-size: 16px !important;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+#user-tools strong {
+    color: #130f4c;
+}
+#user-tools a {
+    color: #130f4c !important;
+}
+
+
+a:link,
+a:visited{
+    color: #000000;
+}
+
+div.breadcrumbs{
+    background: #56ca84;
+    color: #130f4c;
+}
+
+div.breadcrumbs a{
+    color: #333;
+}
+
+.module h2, .module caption, .inline-group h2{
+    background: #56ca84;   
+}
+
+.button, input[type="submit"], input[type="button"], .submit-row input, a.button{
+    background-color: #5C6AC4;
+}
+
+.default{
+    background-color: #5C6AC4 !important;
+}
+
+.default:hover,
+.default:focus
+{
+    background-color: rgb(26, 31, 59) !important;
+}
